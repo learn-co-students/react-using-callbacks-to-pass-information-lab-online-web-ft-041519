@@ -9,9 +9,13 @@ export default class Cell extends Component {
     }
   }
   
+  handleClick = () => {
+    setColor(hexColor)
+  }
+
   render() {
     return (
-      <div className="cell" style={{backgroundColor: this.state.color}}>
+      <div className="cell" style={{backgroundColor: this.state.color}}onClick={this.handleClick}>
       </div>
     )
   }
