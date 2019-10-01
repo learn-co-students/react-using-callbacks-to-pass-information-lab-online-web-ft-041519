@@ -2,12 +2,25 @@ import React, { Component } from 'react';
 import chromeBoi from './data.js'
 import Cell from './Cell.js'
 import ColorSelector from './ColorSelector.js'
+import { runInThisContext } from 'vm';
 
 export default class Matrix extends Component {
 
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
+    this.state = {
+      selectedColor: "#FFF"
+    }
   }
+
+  setColor = (newColor) => {
+    this.setState({
+      selectedColor: newColor
+    })
+  }
+
+
+
 
   genRow = (vals) => (
     vals.map((val, idx) => <Cell key={idx} color={val} />)
